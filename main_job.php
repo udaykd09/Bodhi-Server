@@ -4,14 +4,14 @@
 	$result = mysqli_query ( $con, $sql1 );
 	//Iterate the result
 	while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        $soil_moisture = ''
-        $resp = ''
+        $soil_moisture = '';
+        $resp = '';
         if (isset($row['plant'])) {
-            $soil_moisture = '' //Get Soil Moisture
-            $water_flag = '' //Check if Need to water
+            $soil_moisture = ''; //Get Soil Moisture
+            $water_flag = ''; //Check if Need to water
             if ($water_flag == TRUE) {
-                $alert = "Time"
-                $regID = $row['regID']
+                $alert = "Time";
+                $regID = $row['regID'];
                 include 'send_notif_gcm.php';
             }
         }

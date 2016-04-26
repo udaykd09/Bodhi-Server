@@ -1,10 +1,10 @@
 <?php
-	//$regID = $_GET['regID']
-	//$alert = $_GET['alert']
+	$regIDs = array($regID);
+	$alerts = array("m" => $alert);
 	$url = 'https://android.googleapis.com/gcm/send';
 	$fields = array(
-        'registration_ids' => $regID,
-        'data' => $alert,
+        'registration_ids' => $regIDs,
+        'data' => $alerts,
     	);
 	define("GOOGLE_API_KEY", "AIzaSyDmr-I-SuRJ0ZKcWL03lhoep4755JHD_A4"); 		
     	$headers = array(
