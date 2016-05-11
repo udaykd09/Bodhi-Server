@@ -1,6 +1,4 @@
 <?php
-	$regIDs = array($regID);
-	$alerts = array("m" => $alert);
 	$url = 'https://android.googleapis.com/gcm/send';
 	$fields = array(
         'registration_ids' => $regIDs,

@@ -1,6 +1,7 @@
 <?php
-$mail = $_POST ['email'];
+$mail = $_POST ['mail'];
 $regID = $_POST ['regId'];
+$city = $_POST ['city'];
 $resp = '';
 $con = mysqli_connect ( "localhost", "udaykd099", "099udaykd", "Bodhi_UserData" );
 if (! $con) {
@@ -9,10 +10,11 @@ if (! $con) {
 // inserting record
 $sql1 = "INSERT INTO user_data (mail, regID) VALUES ('$mail','$regID')";	
 if (! mysqli_query ( $con, $sql1 )) {
-$resp = "Error in Updating Database, Please retry!";	
+$resp = "Response Error";	
 die ( 'Error: ' . mysqli_error ( $con ) );
 } else {
-$resp = "Updated Successfully";
+$resp = "Response : " . $mail . " User Added Successfully";
 } 
+echo $resp;
 include 'send_resp_gcm.php';
 ?>

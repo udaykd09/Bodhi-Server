@@ -1,5 +1,4 @@
 <?php
-	$plant = $_POST ['plant'];
 	$mail = $_POST ['mail'];
 	$regID = $_POST ['regId'];
 	$city = $_POST ['city'];
@@ -9,12 +8,12 @@
 		$resp = "Response Failed to connect to MySQL: " . mysqli_connect_error ();
 	}
 	// inserting record
-	$sql1 = "INSERT INTO user_data (mail, plant, regID, city) VALUES ('$mail','$plant','$regID','$city')";
+	$sql1 = "UPDATE user_data SET city='$city' WHERE mail='$mail'";
 		
 	if (! mysqli_query ( $con, $sql1 )) {
 		die ( 'Error: ' . mysqli_error ( $con ) );
 	} else {
-		$resp = "Response : " . $plant . " Added Successfully";
+		$resp = "Response : " . $city . " Updated Successfully";
 	}
 	include 'send_resp_gcm.php';
 ?>
